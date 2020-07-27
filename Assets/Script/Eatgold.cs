@@ -14,36 +14,29 @@ public class Eatgold : MonoBehaviour
 
     public GameObject Ring;
 
+    public Material material;
+
     // Start is called before the first frame update
     void Start()
     {
-        Ring = GameObject.Find("Ring");      
+        Ring = GameObject.Find("Ring");
+  
     }
 
     void OnCollisionEnter(Collision collision)
     {               
         if (collision.gameObject.tag == "Player")
         {
-            //Destroy(gameObject);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+           // gameObject.SetActive(false);
 
-            if (gameObject.name == "Ring_1")
-            {
-                Ring.SendMessage("openItem4");
-            }
-            else if (gameObject.name == "Ring_2")
-            {
-                Ring.SendMessage("openItem5");
-            }
-            else if (gameObject.name == "Ring_5")
-            {
-                Ring.SendMessage("stopTime");
-            }
-            
+            Debug.Log("gameObject :" + gameObject.name);
+
+            Ring.SendMessage("ArrowShow");
+            Ring.SendMessage("openItem");
+
 
         }
        
     }
-
-   
 }
