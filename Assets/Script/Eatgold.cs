@@ -23,9 +23,9 @@ public class Eatgold : MonoBehaviour
   
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionEnter(Collision collision)
     {               
-        if (collider.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
            // gameObject.SetActive(false);

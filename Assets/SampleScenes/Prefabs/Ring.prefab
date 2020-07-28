@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RingArray: []
   Ring: {fileID: 0}
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: aa56e09edbacf90499709b9c734e1e0b, type: 2}
 --- !u!136 &5219729301352234738
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -104,7 +104,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 15.083813
   m_Height: 30.167624
