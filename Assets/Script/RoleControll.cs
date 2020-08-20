@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
+
 
 public class RoleControll : MonoBehaviour
 {
@@ -8,10 +10,12 @@ public class RoleControll : MonoBehaviour
     public float MoveSpeed = 1;       //移动速度
     public float RotateSpeed = 20.0f;     //旋转速度
 
+    public GameObject attack_ui;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        attack_ui = GameObject.Find("UI_Attack");
     }
 
 
@@ -114,4 +118,22 @@ public class RoleControll : MonoBehaviour
         }*/
 
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            //  Destroy(gameObject);
+            attack_ui.SendMessage("TakeDamage");
+
+            Vector3 pos = transform.position;
+            Debug.Log("attack_ui gameObject :" + pos);
+            pos.z += 0.1f;
+            transform.position = pos;
+            Debug.Log("attack_ui gameObject2 :" + pos);
+
+        }
+
+    }
+
 }

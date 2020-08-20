@@ -18,6 +18,7 @@ public class RingEvent : MonoBehaviour
     void Start()
     {
         timer_ui = GameObject.Find("UI_timer");
+
     }
 
     // Update is called once per frame
@@ -34,12 +35,21 @@ public class RingEvent : MonoBehaviour
 
     void ArrowShow()
     {
-        if (temp < arrowList.Length)
+        int len = arrowList.Length - 1;
+        Debug.Log("nowtemp :" + temp);
+        if (temp < len)
         {
             arrowList[temp].SetActive(false);
             temp++;
             arrowList[temp].SetActive(true);
             Debug.Log("temp :" + temp);
+            Debug.Log("Length :" + arrowList.Length);
+        }
+        else if (temp == len)
+        {
+            arrowList[temp].SetActive(false);
+            Debug.Log("ENDtemp :" + temp);
+            stopTime();
         }
        
     }
