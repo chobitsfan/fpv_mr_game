@@ -27,8 +27,8 @@ public class Eatgold : MonoBehaviour
     {               
         if (collider.tag == "Player")
         {
-            Destroy(gameObject);
-           // gameObject.SetActive(false);
+          //  Destroy(gameObject);
+            gameObject.SetActive(false);
 
             Debug.Log("gameObject :" + gameObject.name);
 
