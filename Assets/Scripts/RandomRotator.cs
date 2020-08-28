@@ -22,6 +22,14 @@ public class RandomRotator : MonoBehaviour
             Debug.Log("gameObject :" + gameObject.name);
 
          }
-    
-     }
+        if (other.gameObject.tag == "floor")
+        {
+            //  Destroy(gameObject);
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+            Debug.Log("gameObject :" + gameObject.name);
+
+        }
+
+    }
 }
