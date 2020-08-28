@@ -6,7 +6,7 @@ using UnityEngine;
 public class FPV_CAM : MonoBehaviour
 {
     WebCamTexture webcamTexture;
-    public Camera cam;
+    Camera cam;
     public Material mat;
     Texture2D distortMap;
     double _CX = 315.467;
@@ -85,6 +85,8 @@ public class FPV_CAM : MonoBehaviour
                 break;
             }
         }
+
+        cam = GetComponent<Camera>();
     }
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
